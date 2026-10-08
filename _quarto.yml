@@ -1,0 +1,32 @@
+project:
+  type: book
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    number-sections: true
+    css: 
+      - style.css
+      - toc.css
+  pdf:
+    include-in-header: preamble.tex
+
+bibliography: references.bib
+
+book:
+  title: "Tidy Ranges Tutorial"
+  description: "Basic examples of computing operations on genomic ranges using the tidy data philosophy."
+  chapters:
+    - index.Rmd
+    - bootstrap-overlap.Rmd
+    - compute-overlaps.Rmd
+    - gene-plots.Rmd
+    - isoform-analysis.Rmd
+    - join-is-an-overlap.Rmd
+    - many-genomic-models.Rmd
+    - promoter-marks.Rmd
+    - rna-seq-eda.Rmd
+    - snp-position-in-peaks.Rmd
+    - tximeta-gene-range.Rmd
+    - references.Rmd
