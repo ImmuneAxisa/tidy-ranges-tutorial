@@ -9,6 +9,9 @@ format:
     css: 
       - style.css
       - toc.css
+    grid:
+      body-width: 1100px  # Default is ~800px. Increase as needed.
+      margin-width: 100px # Width of the right-side TOC
   pdf:
     include-in-header: preamble.tex
 
@@ -17,16 +20,21 @@ bibliography: references.bib
 book:
   title: "Tidy Ranges Tutorial"
   description: "Basic examples of computing operations on genomic ranges using the tidy data philosophy."
+  repo-url: https://github.com/tidybiology/tidy-ranges-tutorial
+  reader-mode: true
   chapters:
     - index.Rmd
-    - bootstrap-overlap.Rmd
-    - compute-overlaps.Rmd
-    - gene-plots.Rmd
-    - isoform-analysis.Rmd
     - join-is-an-overlap.Rmd
-    - many-genomic-models.Rmd
+    - compute-overlaps.Rmd
     - promoter-marks.Rmd
-    - rna-seq-eda.Rmd
+    - bootstrap-overlap.Rmd
     - snp-position-in-peaks.Rmd
+    - gene-plots.Rmd
+    - rna-seq-eda.Rmd
+    - many-genomic-models.Rmd
+    - isoform-analysis.Rmd
     - tximeta-gene-range.Rmd
     - references.Rmd
+
+execute:
+  results: hold

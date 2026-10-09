@@ -8,3 +8,4 @@ data/*
 _book/
 *_cache/
 *_files/
+site_libs/
