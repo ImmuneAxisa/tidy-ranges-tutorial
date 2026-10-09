@@ -8,7 +8,7 @@
 
 <meta name="description" content="Basic examples of computing operations on genomic ranges using the tidy data philosophy.">
 
-<title>9&nbsp; RNA-seq EDA – Tidy Ranges Tutorial</title>
+<title>7&nbsp; RNA-seq EDA – Tidy Ranges Tutorial</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -86,8 +86,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./snp-position-in-peaks.html" rel="next">
-<link href="./promoter-marks.html" rel="prev">
+<link href="./many-genomic-models.html" rel="next">
+<link href="./gene-plots.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -98,7 +98,7 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-cdc77272069d5dbfe51e76703a4fda02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -141,7 +141,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./rna-seq-eda.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">RNA-seq EDA</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./rna-seq-eda.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">RNA-seq EDA</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -159,6 +159,14 @@ div.csl-indent {
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Tidy Ranges Tutorial</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/tidybiology/tidy-ranges-tutorial" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -171,67 +179,67 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Tidy Ranges Tutorial</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./bootstrap-overlap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Bootstrap overlap</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./compute-overlaps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Compute overlaps</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./gene-plots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Gene plots</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./isoform-analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Isoform analysis</span></span></a>
+ <span class="menu-text">About</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./join-is-an-overlap.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Join is an overlap</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Join is an overlap</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./many-genomic-models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Many genomic models</span></span></a>
+  <a href="./compute-overlaps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Compute overlaps</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./promoter-marks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Promoter marks</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Promoter marks</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rna-seq-eda.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">RNA-seq EDA</span></span></a>
+  <a href="./bootstrap-overlap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bootstrap overlap</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./snp-position-in-peaks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">SNP position in peaks</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">SNP position in peaks</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./gene-plots.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Gene plots</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rna-seq-eda.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">RNA-seq EDA</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./many-genomic-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Many genomic models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./isoform-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Isoform analysis</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tximeta-gene-range.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Gene ranges in tximeta</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Gene ranges in tximeta</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -253,7 +261,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">RNA-seq EDA</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">RNA-seq EDA</span></h1>
 </div>
 
 
@@ -359,7 +367,7 @@ colData names(4): names line condition rep</code></pre>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>oct4 <span class="ot">&lt;-</span> gse <span class="sc">%&gt;%</span></span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(line <span class="sc">==</span> <span class="st">"OCT4"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sample_name =</span> <span class="fu">select</span>(., .sample) <span class="sc">%&gt;%</span> <span class="co"># this is a hack, .sample seems broken with mutate</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sample_name =</span> <span class="fu">pull</span>(., .sample) <span class="sc">%&gt;%</span> <span class="co"># this is a hack, .sample seems broken with mutate</span></span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>           <span class="fu">str_remove</span>(<span class="st">"OCT4-"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>           <span class="fu">factor</span>(<span class="at">levels =</span> <span class="fu">unique</span>(.)),</span>
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">condition =</span> condition <span class="sc">%&gt;%</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"untrt"</span>,<span class="st">"trt"</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -371,24 +379,10 @@ colData names(4): names line condition rep</code></pre>
   Please report the issue at
   &lt;https://github.com/stemangiola/tidySummarizedExperiment/issues&gt;.</code></pre>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: There was 1 warning in `dplyr::mutate()`.
-ℹ In argument: `sample_name = select(., .sample) %&gt;% str_remove("OCT4-") %&gt;%
-  factor(levels = unique(.))`.
-Caused by warning in `stri_replace_first_regex()`:
-! argument is not an atomic vector; coercing</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: There was 1 warning in `dplyr_fn()`.
-ℹ In argument: `sample_name = select(., .sample) %&gt;% str_remove("OCT4-") %&gt;%
-  factor(levels = unique(.))`.
-Caused by warning in `stri_replace_first_regex()`:
-! argument is not an atomic vector; coercing</code></pre>
-</div>
 </div>
 <p>Note, the third line in the <code>mutate</code> call uses the <code>unique</code> function to set the levels: the consequence of this is that the <code>sample_name</code> factor will have levels in the order in which they are present in the current character vector and not alphabetical.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>oct4</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>oct4</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>class: RangedSummarizedExperiment 
 dim: 53697 6 
@@ -404,10 +398,10 @@ colData names(5): names line condition rep sample_name</code></pre>
 </div>
 <p><em>tidybulk</em> provides access to many steps in bulk analysis, including filtering and count scaling. For details on what is happening behind the scene, see the help, e.g.&nbsp;<code>?keep_abundant</code> describes that it makes use of <code>edgeR::filterByExpr</code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidybulk)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>oct4 <span class="ot">&lt;-</span> oct4 <span class="sc">%&gt;%</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">keep_abundant</span>(<span class="at">factor_of_interest =</span> condition) <span class="sc">%&gt;%</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_abundance</span>(<span class="at">method=</span><span class="st">"RLE"</span>) <span class="co"># DESeq2 scaling</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidybulk)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>oct4 <span class="ot">&lt;-</span> oct4 <span class="sc">%&gt;%</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">keep_abundant</span>(<span class="at">factor_of_interest =</span> condition) <span class="sc">%&gt;%</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_abundance</span>(<span class="at">method=</span><span class="st">"RLE"</span>) <span class="co"># DESeq2 scaling</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: The `factor_of_interest` argument of `keep_abundant()` is deprecated as of
 tidybulk 2.0.0.
@@ -427,11 +421,11 @@ tidybulk 2.0.0.
 </div>
 <p>It is straightforward to pipe the data directly into plots:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>oct4 <span class="sc">%&gt;%</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(sample_name, counts_scaled <span class="sc">+</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>oct4 <span class="sc">%&gt;%</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(sample_name, counts_scaled <span class="sc">+</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_log10</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -442,8 +436,8 @@ tidybulk 2.0.0.
 </div>
 <p>For comparing code, let’s pull out the genes that remain:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>gene_idx <span class="ot">&lt;-</span> oct4 <span class="sc">%&gt;%</span> <span class="fu">pivot_transcript</span>() <span class="sc">%&gt;%</span> <span class="fu">pull</span>(.feature)</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gene_idx)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>gene_idx <span class="ot">&lt;-</span> oct4 <span class="sc">%&gt;%</span> <span class="fu">pivot_transcript</span>() <span class="sc">%&gt;%</span> <span class="fu">pull</span>(.feature)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gene_idx)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "ENSMUSG00000000001.4"  "ENSMUSG00000000028.15" "ENSMUSG00000000031.16"
 [4] "ENSMUSG00000000037.16" "ENSMUSG00000000056.7"  "ENSMUSG00000000058.6" </code></pre>
@@ -451,19 +445,19 @@ tidybulk 2.0.0.
 </div>
 <p>The equivalent code in DESeq2. Understanding this code requires knowledge that <code>boxplot</code> plots columns of a matrix.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DESeq2)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>gse_sub <span class="ot">&lt;-</span> gse[ gene_idx , gse<span class="sc">$</span>line <span class="sc">==</span> <span class="st">"OCT4"</span> ]</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>gse_sub<span class="sc">$</span>condition <span class="ot">&lt;-</span> <span class="fu">factor</span>(gse_sub<span class="sc">$</span>condition)</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>dds <span class="ot">&lt;-</span> gse_sub <span class="sc">%&gt;%</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">DESeqDataSet</span>(<span class="sc">~</span>condition) <span class="sc">%&gt;%</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">estimateSizeFactors</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DESeq2)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>gse_sub <span class="ot">&lt;-</span> gse[ gene_idx , gse<span class="sc">$</span>line <span class="sc">==</span> <span class="st">"OCT4"</span> ]</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>gse_sub<span class="sc">$</span>condition <span class="ot">&lt;-</span> <span class="fu">factor</span>(gse_sub<span class="sc">$</span>condition)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>dds <span class="ot">&lt;-</span> gse_sub <span class="sc">%&gt;%</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">DESeqDataSet</span>(<span class="sc">~</span>condition) <span class="sc">%&gt;%</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">estimateSizeFactors</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>using counts and average transcript lengths from tximeta</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>using 'avgTxLength' from assays(dds), correcting for library size</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="fu">counts</span>(dds, <span class="at">normalized=</span><span class="cn">TRUE</span>) <span class="sc">+</span> <span class="dv">1</span>, <span class="at">log=</span><span class="st">"y"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="fu">counts</span>(dds, <span class="at">normalized=</span><span class="cn">TRUE</span>) <span class="sc">+</span> <span class="dv">1</span>, <span class="at">log=</span><span class="st">"y"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -474,17 +468,17 @@ tidybulk 2.0.0.
 </div>
 <p>We can also make more interesting plots. E.g. for the genes involved in pluripotency, make a line plot, highlighting OCT4. In addition, center the log counts for each gene (subtract the mean of log counts across samples).</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>oct4 <span class="sc">%&gt;%</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(SYMBOL <span class="sc">%in%</span> pluri) <span class="sc">%&gt;%</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">logcounts =</span> <span class="fu">log10</span>(counts_scaled <span class="sc">+</span> <span class="dv">1</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Oct4 =</span> <span class="fu">ifelse</span>(SYMBOL <span class="sc">==</span> <span class="st">"Pou5f1"</span>, <span class="st">"red"</span>, <span class="st">"black"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(.feature) <span class="sc">%&gt;%</span></span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">logcounts =</span> logcounts <span class="sc">-</span> <span class="fu">mean</span>(logcounts)) <span class="sc">%&gt;%</span></span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(sample_name, logcounts, <span class="at">group=</span>.feature, <span class="at">color=</span>Oct4)) <span class="sc">+</span></span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_identity</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>oct4 <span class="sc">%&gt;%</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(SYMBOL <span class="sc">%in%</span> pluri) <span class="sc">%&gt;%</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">logcounts =</span> <span class="fu">log10</span>(counts_scaled <span class="sc">+</span> <span class="dv">1</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Oct4 =</span> <span class="fu">ifelse</span>(SYMBOL <span class="sc">==</span> <span class="st">"Pou5f1"</span>, <span class="st">"red"</span>, <span class="st">"black"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(.feature) <span class="sc">%&gt;%</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">logcounts =</span> logcounts <span class="sc">-</span> <span class="fu">mean</span>(logcounts)) <span class="sc">%&gt;%</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(sample_name, logcounts, <span class="at">group=</span>.feature, <span class="at">color=</span>Oct4)) <span class="sc">+</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_identity</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>tidySummarizedExperiment says: A data frame is returned for independent data analysis.</code></pre>
 </div>
@@ -498,15 +492,15 @@ tidybulk 2.0.0.
 </div>
 <p>The equivalent code for base R requires defining more intermediate variables and control flow code (the <code>for</code> loop). While there’s nothing particularly right or wrong about the two choices, the above prioritizes the operations in a way that is human readable. In some cases, e.g.&nbsp;performing linear algebra operations on matrices, base R code may prove to be more efficient, which is a consideration for what to use in package source code.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>pluri_idx <span class="ot">&lt;-</span> <span class="fu">mcols</span>(dds)<span class="sc">$</span>SYMBOL <span class="sc">%in%</span> pluri</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">&lt;-</span> <span class="fu">log10</span>(<span class="fu">counts</span>(dds, <span class="at">normalized=</span><span class="cn">TRUE</span>)[pluri_idx,] <span class="sc">+</span> <span class="dv">1</span>)</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">&lt;-</span> mat <span class="sc">-</span> <span class="fu">rowMeans</span>(mat)</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>hilite <span class="ot">&lt;-</span> <span class="fu">rownames</span>(dds)[<span class="fu">which</span>(<span class="fu">mcols</span>(dds)<span class="sc">$</span>SYMBOL <span class="sc">==</span> <span class="st">"Pou5f1"</span>)]</span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mat[<span class="dv">1</span>,], <span class="at">type=</span><span class="st">"n"</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>), <span class="at">xlab=</span><span class="st">"samples"</span>, <span class="at">ylab=</span><span class="st">"logcounts"</span>)</span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(mat)) {</span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>  col <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">rownames</span>(mat)[i] <span class="sc">==</span> hilite, <span class="st">"red"</span>, <span class="st">"black"</span>)</span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">points</span>(mat[i,], <span class="at">type=</span><span class="st">"b"</span>, <span class="at">col=</span>col)</span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>pluri_idx <span class="ot">&lt;-</span> <span class="fu">mcols</span>(dds)<span class="sc">$</span>SYMBOL <span class="sc">%in%</span> pluri</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">&lt;-</span> <span class="fu">log10</span>(<span class="fu">counts</span>(dds, <span class="at">normalized=</span><span class="cn">TRUE</span>)[pluri_idx,] <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">&lt;-</span> mat <span class="sc">-</span> <span class="fu">rowMeans</span>(mat)</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>hilite <span class="ot">&lt;-</span> <span class="fu">rownames</span>(dds)[<span class="fu">which</span>(<span class="fu">mcols</span>(dds)<span class="sc">$</span>SYMBOL <span class="sc">==</span> <span class="st">"Pou5f1"</span>)]</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mat[<span class="dv">1</span>,], <span class="at">type=</span><span class="st">"n"</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>), <span class="at">xlab=</span><span class="st">"samples"</span>, <span class="at">ylab=</span><span class="st">"logcounts"</span>)</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(mat)) {</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>  col <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="fu">rownames</span>(mat)[i] <span class="sc">==</span> hilite, <span class="st">"red"</span>, <span class="st">"black"</span>)</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">points</span>(mat[i,], <span class="at">type=</span><span class="st">"b"</span>, <span class="at">col=</span>col)</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -517,14 +511,14 @@ tidybulk 2.0.0.
 </div>
 <p>We can test for differential expression with DESeq2:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> dds[gene_idx,] <span class="sc">%&gt;%</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">DESeq</span>(<span class="at">quiet=</span><span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">results</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> dds[gene_idx,] <span class="sc">%&gt;%</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">DESeq</span>(<span class="at">quiet=</span><span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">results</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Or equivalently with <em>tidybulk</em>:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>oct4 <span class="ot">&lt;-</span> oct4 <span class="sc">%&gt;%</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">test_differential_abundance</span>(<span class="sc">~</span>condition, <span class="at">method=</span><span class="st">"deseq2"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>oct4 <span class="ot">&lt;-</span> oct4 <span class="sc">%&gt;%</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">test_differential_abundance</span>(<span class="sc">~</span>condition, <span class="at">method=</span><span class="st">"deseq2"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>=====================================
 tidybulk says: All testing methods use raw counts, irrespective of if scale_abundance
@@ -549,16 +543,16 @@ tidybulk says: to access the DE object do `metadata(.)$tidybulk$deseq2_object`
 tidybulk says: to access the raw results (fitted GLM) do `metadata(.)$tidybulk$deseq2_fit`
 This message is displayed once per session.</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>tidy_res <span class="ot">&lt;-</span> oct4 <span class="sc">%&gt;%</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_transcript</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>tidy_res <span class="ot">&lt;-</span> oct4 <span class="sc">%&gt;%</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_transcript</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Because we have filtered the two objects identically, we obtain the same test results:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(<span class="fu">rownames</span>(res), tidy_res<span class="sc">$</span>.feature)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(<span class="fu">rownames</span>(res), tidy_res<span class="sc">$</span>.feature)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="at">base_sig =</span> res<span class="sc">$</span>padj <span class="sc">&lt;</span> .<span class="dv">1</span>, <span class="at">tidy_sig =</span> tidy_res<span class="sc">$</span>padj <span class="sc">&lt;</span> .<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="at">base_sig =</span> res<span class="sc">$</span>padj <span class="sc">&lt;</span> .<span class="dv">1</span>, <span class="at">tidy_sig =</span> tidy_res<span class="sc">$</span>padj <span class="sc">&lt;</span> .<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>        tidy_sig
 base_sig FALSE  TRUE
@@ -569,37 +563,37 @@ base_sig FALSE  TRUE
 <p>Finally, we build up to a more interesting plot. Suppose we now want to split the genes involved in pluripotency by the DE result (the significance and LFC), and then add the gene symbol to the side.</p>
 <p>We begin by building the dataset:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>plot_data <span class="ot">&lt;-</span> oct4 <span class="sc">%&gt;%</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(SYMBOL <span class="sc">%in%</span> pluri) <span class="sc">%&gt;%</span></span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">logcounts =</span> <span class="fu">log10</span>(counts_scaled <span class="sc">+</span> <span class="dv">1</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Oct4 =</span> <span class="fu">ifelse</span>(SYMBOL <span class="sc">==</span> <span class="st">"Pou5f1"</span>, <span class="st">"red"</span>, <span class="st">"black"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(.feature) <span class="sc">%&gt;%</span></span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">logcounts =</span> logcounts <span class="sc">-</span> <span class="fu">mean</span>(logcounts)) <span class="sc">%&gt;%</span></span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gene_type =</span> <span class="fu">case_when</span>(</span>
-<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>           padj <span class="sc">&lt;</span> .<span class="dv">1</span> <span class="sc">&amp;</span> log2FoldChange <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"up"</span>,</span>
-<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>           padj <span class="sc">&lt;</span> .<span class="dv">1</span> <span class="sc">&amp;</span> log2FoldChange <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"down"</span>,</span>
-<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>           <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"null"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>plot_data <span class="ot">&lt;-</span> oct4 <span class="sc">%&gt;%</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(SYMBOL <span class="sc">%in%</span> pluri) <span class="sc">%&gt;%</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">logcounts =</span> <span class="fu">log10</span>(counts_scaled <span class="sc">+</span> <span class="dv">1</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Oct4 =</span> <span class="fu">ifelse</span>(SYMBOL <span class="sc">==</span> <span class="st">"Pou5f1"</span>, <span class="st">"red"</span>, <span class="st">"black"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(.feature) <span class="sc">%&gt;%</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">logcounts =</span> logcounts <span class="sc">-</span> <span class="fu">mean</span>(logcounts)) <span class="sc">%&gt;%</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gene_type =</span> <span class="fu">case_when</span>(</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>           padj <span class="sc">&lt;</span> .<span class="dv">1</span> <span class="sc">&amp;</span> log2FoldChange <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"up"</span>,</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>           padj <span class="sc">&lt;</span> .<span class="dv">1</span> <span class="sc">&amp;</span> log2FoldChange <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"down"</span>,</span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>           <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"null"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>tidySummarizedExperiment says: A data frame is returned for independent data analysis.</code></pre>
 </div>
 </div>
 <p>Now we repeat the code from before, but now faceting by <code>gene_type</code>. Furthermore, we use <code>geom_text_repel</code> to add labels to the right side.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>plot_data <span class="sc">%&gt;%</span></span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(gene_type <span class="sc">!=</span> <span class="st">"null"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(sample_name, logcounts, <span class="at">group=</span>.feature, <span class="at">color=</span>Oct4)) <span class="sc">+</span></span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data=</span>plot_data <span class="sc">%&gt;%</span></span>
-<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">filter</span>(sample_name <span class="sc">==</span> <span class="st">"trt-3"</span>, gene_type <span class="sc">!=</span> <span class="st">"null"</span>),</span>
-<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">aes</span>(sample_name, logcounts, <span class="at">label=</span>SYMBOL),</span>
-<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>                  <span class="at">nudge_x=</span>.<span class="dv">5</span>, <span class="at">seed=</span><span class="dv">1</span>, <span class="at">max.overlaps=</span><span class="cn">Inf</span>) <span class="sc">+</span></span>
-<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_identity</span>() <span class="sc">+</span></span>
-<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>gene_type) <span class="sc">+</span></span>
-<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">add =</span> <span class="dv">2</span>)) <span class="sc">+</span></span>
-<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"sample"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>plot_data <span class="sc">%&gt;%</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(gene_type <span class="sc">!=</span> <span class="st">"null"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(sample_name, logcounts, <span class="at">group=</span>.feature, <span class="at">color=</span>Oct4)) <span class="sc">+</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data=</span>plot_data <span class="sc">%&gt;%</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">filter</span>(sample_name <span class="sc">==</span> <span class="st">"trt-3"</span>, gene_type <span class="sc">!=</span> <span class="st">"null"</span>),</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">aes</span>(sample_name, logcounts, <span class="at">label=</span>SYMBOL),</span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>                  <span class="at">nudge_x=</span>.<span class="dv">5</span>, <span class="at">seed=</span><span class="dv">1</span>, <span class="at">max.overlaps=</span><span class="cn">Inf</span>) <span class="sc">+</span></span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_identity</span>() <span class="sc">+</span></span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>gene_type) <span class="sc">+</span></span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">add =</span> <span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"sample"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1022,13 +1016,13 @@ Mangiola, Stefano, Ramyar Molania, Ruining Dong, Maria A. Doyle, and Anthony T. 
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./promoter-marks.html" class="pagination-link" aria-label="Promoter marks">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Promoter marks</span></span>
+      <a href="./gene-plots.html" class="pagination-link" aria-label="Gene plots">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Gene plots</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./snp-position-in-peaks.html" class="pagination-link" aria-label="SNP position in peaks">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">SNP position in peaks</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./many-genomic-models.html" class="pagination-link" aria-label="Many genomic models">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Many genomic models</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
