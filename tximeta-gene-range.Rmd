@@ -210,7 +210,7 @@ command.
 
 ```{r cache=FALSE}
 par <- pgParams(
-  chrom = seqnames(gene) %>% as.character(),
+  chrom =  as.character(seqnames(gene)),
   chromstart = round((start(gene) - 7e5) / 1e5) * 1e5,
   chromend = round((end(gene) + 7e5) / 1e5) * 1e5,
   assembly = new_assembly,
